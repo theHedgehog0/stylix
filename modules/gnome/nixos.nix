@@ -4,7 +4,7 @@ with lib;
 
 {
   options.stylix.targets.gnome.enable =
-    config.lib.stylix.mkEnableTarget "GNOME" config.services.xserver.desktopManager.gnome.enable;
+    config.stylix.mkEnableTarget "GNOME" config.services.xserver.desktopManager.gnome.enable;
 
   config = mkIf config.stylix.targets.gnome.enable {
     # As Stylix is controlling the wallpaper, there is no need for this

@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 with lib;
-with config.lib.stylix.colors;
+with config.stylix.colors;
 
 let
   theme = pkgs.runCommand "stylix-plymouth" { } ''
@@ -45,7 +45,7 @@ let
 
 in {
   options.stylix.targets.plymouth = {
-    enable = config.lib.stylix.mkEnableTarget "the Plymouth boot screen" true;
+    enable = config.stylix.mkEnableTarget "the Plymouth boot screen" true;
 
     logo = mkOption {
       description = ''

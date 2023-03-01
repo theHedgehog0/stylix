@@ -3,7 +3,7 @@
 with config.stylix.fonts;
 
 let
-  themeFile = config.lib.stylix.colors {
+  themeFile = config.stylix.colors {
     templateRepo = pkgs.fetchFromGitHub {
       owner = "aarowill";
       repo = "base16-alacritty";
@@ -14,7 +14,7 @@ let
 in
 {
   options.stylix.targets.alacritty.enable =
-    config.lib.stylix.mkEnableTarget "Alacritty" true;
+    config.stylix.mkEnableTarget "Alacritty" true;
 
   config = lib.mkIf config.stylix.targets.alacritty.enable {
     programs.alacritty.settings = {

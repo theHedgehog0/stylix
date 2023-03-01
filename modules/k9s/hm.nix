@@ -1,10 +1,10 @@
 { pkgs, config, lib, ... }:
 
-with config.lib.stylix.colors.withHashtag;
+with config.stylix.colors.withHashtag;
 
 {
   options.stylix.targets.k9s.enable =
-    config.lib.stylix.mkEnableTarget "k9s" true;
+    config.stylix.mkEnableTarget "k9s" true;
 
   config = lib.mkIf config.stylix.targets.k9s.enable {
     programs.k9s.skin = {

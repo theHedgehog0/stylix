@@ -2,7 +2,7 @@
 
 let
   cfg = config.stylix.targets.kitty;
-  theme = config.lib.stylix.colors {
+  theme = config.stylix.colors {
     templateRepo = pkgs.fetchFromGitHub {
       owner = "kdrag0n";
       repo = "base16-kitty";
@@ -13,7 +13,7 @@ let
   };
 in {
   options.stylix.targets.kitty = {
-    enable = config.lib.stylix.mkEnableTarget "Kitty" true;
+    enable = config.stylix.mkEnableTarget "Kitty" true;
     variant256Colors = lib.mkOption { type = lib.types.bool; default = false; };
   };
 

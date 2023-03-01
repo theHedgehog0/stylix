@@ -3,7 +3,7 @@
 with config.stylix.fonts;
 
 let
-  themeFile = config.lib.stylix.colors {
+  themeFile = config.stylix.colors {
     templateRepo = pkgs.fetchFromGitHub {
       owner = "tinted-theming";
       repo = "base16-xresources";
@@ -14,7 +14,7 @@ let
 in
 {
   options.stylix.targets.xresources.enable =
-    config.lib.stylix.mkEnableTarget "Xresources" true;
+    config.stylix.mkEnableTarget "Xresources" true;
 
   config = lib.mkIf config.stylix.targets.xresources.enable {
     xresources = {

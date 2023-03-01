@@ -1,6 +1,6 @@
 { options, config, lib, ... }:
 
-with config.lib.stylix.colors;
+with config.stylix.colors;
 
 let
   inside = base01-hex;
@@ -12,7 +12,7 @@ let
 
 in {
   options.stylix.targets.swaylock = {
-    enable = config.lib.stylix.mkEnableTarget "Swaylock" true;
+    enable = config.stylix.mkEnableTarget "Swaylock" true;
     useImage = lib.mkOption {
       description = ''
         Whether to use your wallpaper image for the Swaylock background.

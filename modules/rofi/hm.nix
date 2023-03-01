@@ -3,7 +3,7 @@
 with config.stylix.fonts;
 
 let
-  themeFile = config.lib.stylix.colors {
+  themeFile = config.stylix.colors {
     templateRepo = pkgs.fetchFromGitHub {
       owner = "tinted-theming";
       repo = "base16-rofi";
@@ -14,7 +14,7 @@ let
 in
 {
   options.stylix.targets.rofi.enable =
-    config.lib.stylix.mkEnableTarget "Rofi" true;
+    config.stylix.mkEnableTarget "Rofi" true;
 
   config = lib.mkIf config.stylix.targets.rofi.enable {
     programs.rofi = {

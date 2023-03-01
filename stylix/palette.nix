@@ -120,9 +120,9 @@ in {
     };
   };
 
+  # This attrset can be used like a function too, see
+  # https://github.com/SenchoPens/base16.nix#mktheme
   config = {
-    # This attrset can be used like a function too, see
-    # https://github.com/SenchoPens/base16.nix#mktheme
-    lib.stylix.colors = (base16.mkSchemeAttrs cfg.base16Scheme).override override;
+    stylix.colors = (base16.mkSchemeAttrs cfg.base16Scheme).override override;
   };
 }

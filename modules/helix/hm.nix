@@ -1,7 +1,7 @@
 { pkgs, config, lib, ... }:
 
 let
-  theme = config.lib.stylix.colors {
+  theme = config.stylix.colors {
     templateRepo = pkgs.fetchFromGitHub {
       owner = "tinted-theming";
       repo = "base16-helix";
@@ -12,7 +12,7 @@ let
 
 in {
   options.stylix.targets.helix.enable =
-    config.lib.stylix.mkEnableTarget "Helix" config.programs.helix.enable;
+    config.stylix.mkEnableTarget "Helix" config.programs.helix.enable;
 
   config = lib.mkIf config.stylix.targets.helix.enable {
     programs.helix.settings.theme = "stylix";

@@ -3,7 +3,7 @@
 with lib;
 
 let
-  themeFile = config.lib.stylix.colors {
+  themeFile = config.stylix.colors {
     templateRepo = pkgs.fetchFromGitHub {
       owner = "chriskempson";
       repo = "base16-vim";
@@ -36,7 +36,7 @@ let
 
 in {
   options.stylix.targets.vim.enable =
-    config.lib.stylix.mkEnableTarget "Vim and/or Neovim" true;
+    config.stylix.mkEnableTarget "Vim and/or Neovim" true;
 
   config = lib.mkIf config.stylix.targets.vim.enable {
     programs.vim = vimOptions;

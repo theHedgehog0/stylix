@@ -1,14 +1,14 @@
 { pkgs, config, lib, ... }:
 
 let
-  css = config.lib.stylix.colors {
+  css = config.stylix.colors {
     template = builtins.readFile ./gtk.mustache;
     extension = "css";
   };
  
 in {
   options.stylix.targets.gtk.enable =
-    config.lib.stylix.mkEnableTarget "all GTK3, GTK4 and Libadwaita apps" true;
+    config.stylix.mkEnableTarget "all GTK3, GTK4 and Libadwaita apps" true;
 
   config = lib.mkIf config.stylix.targets.gtk.enable {
     # programs.dconf.enable = true; required in system config

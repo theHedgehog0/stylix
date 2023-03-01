@@ -1,6 +1,6 @@
 { config, lib, ... }:
 
-with config.lib.stylix.colors.withHashtag;
+with config.stylix.colors.withHashtag;
 
 let
   text = base05;
@@ -14,7 +14,7 @@ let
 
 in {
   options.stylix.targets.i3.enable =
-    config.lib.stylix.mkEnableTarget "i3" true;
+    config.stylix.mkEnableTarget "i3" true;
 
   config = lib.mkMerge [
     (lib.mkIf config.stylix.targets.i3.enable {
@@ -58,7 +58,7 @@ in {
     })
 
     {
-      # Merge this with your bar configuration using //config.lib.stylix.i3.bar
+      # Merge this with your bar configuration using //config.stylix.i3.bar
       lib.stylix.i3.bar = {
         inherit fonts;
 

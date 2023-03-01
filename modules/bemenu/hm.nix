@@ -1,10 +1,10 @@
 {pkgs, config, lib, ... }:
 
-with config.lib.stylix.colors.withHashtag;
+with config.stylix.colors.withHashtag;
 with config.stylix.fonts;
 {
   options.stylix.targets.bemenu = {
-    enable = config.lib.stylix.mkEnableTarget "bemenu" true;
+    enable = config.stylix.mkEnableTarget "bemenu" true;
     fontSize = lib.mkOption {
       type = with lib.types; nullOr int;
       default = null;

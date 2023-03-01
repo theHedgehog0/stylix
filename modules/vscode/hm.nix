@@ -1,7 +1,7 @@
 {pkgs, config, lib, ... }:
 
 let
-  themeFile = config.lib.stylix.colors {
+  themeFile = config.stylix.colors {
     template = builtins.readFile ./template.mustache;
     extension = ".json";
   };
@@ -34,7 +34,7 @@ let
 
 in {
   options.stylix.targets.vscode.enable =
-    config.lib.stylix.mkEnableTarget "VSCode" true;
+    config.stylix.mkEnableTarget "VSCode" true;
 
   config = lib.mkIf config.stylix.targets.vscode.enable {
     programs.vscode = {

@@ -14,7 +14,7 @@ args:
 
       # We also provide a HTML version which is useful for viewing the colors
       # during development.
-      "stylix/palette.html".source = config.lib.stylix.colors {
+      "stylix/palette.html".source = config.stylix.colors {
         template = builtins.readFile ../palette.html.mustache;
         extension = ".html";
       };

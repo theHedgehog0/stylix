@@ -1,8 +1,8 @@
 { pkgs, config, lib, ... }:
 
-with config.lib.stylix;
+with config.stylix;
 with config.stylix.fonts;
-with config.lib.stylix.colors.withHashtag;
+with config.stylix.colors.withHashtag;
 
 let
   # Grub requires fonts to be converted to "PFF2 format"
@@ -24,7 +24,7 @@ let
 
 in {
   options.stylix.targets.grub = {
-    enable = config.lib.stylix.mkEnableTarget "GRUB" true;
+    enable = config.stylix.mkEnableTarget "GRUB" true;
 
     useImage = lib.mkOption {
       description = "Whether to use your wallpaper image as the GRUB background.";

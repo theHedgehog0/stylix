@@ -1,6 +1,6 @@
 { config, lib, ... }:
 
-with config.lib.stylix.colors.withHashtag;
+with config.stylix.colors.withHashtag;
 
 let
   text = base05;
@@ -15,7 +15,7 @@ let
 
 in {
   options.stylix.targets.sway.enable =
-    config.lib.stylix.mkEnableTarget "Sway" true;
+    config.stylix.mkEnableTarget "Sway" true;
 
   config = lib.mkMerge [
     (lib.mkIf config.stylix.targets.sway.enable {
@@ -59,7 +59,7 @@ in {
     })
 
     {
-      # Merge this with your bar configuration using //config.lib.stylix.sway.bar
+      # Merge this with your bar configuration using //config.stylix.sway.bar
       lib.stylix.sway.bar = {
         inherit fonts;
 

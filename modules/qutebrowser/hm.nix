@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 with config.stylix.fonts;
-with config.lib.stylix.colors.withHashtag;
+with config.stylix.colors.withHashtag;
 
 let
   background = base00;
@@ -16,7 +16,7 @@ let
 
 in {
   options.stylix.targets.qutebrowser.enable =
-    config.lib.stylix.mkEnableTarget "Qutebrowser" true;
+    config.stylix.mkEnableTarget "Qutebrowser" true;
 
   config = lib.mkIf config.stylix.targets.qutebrowser.enable {
     programs.qutebrowser.settings = {

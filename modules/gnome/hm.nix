@@ -4,7 +4,7 @@ with lib;
 
 {
   options.stylix.targets.gnome.enable =
-    config.lib.stylix.mkEnableTarget "GNOME" true;
+    config.stylix.mkEnableTarget "GNOME" true;
 
   config = mkIf config.stylix.targets.gnome.enable {
     dconf.settings = {

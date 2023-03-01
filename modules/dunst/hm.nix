@@ -1,11 +1,11 @@
 { config, lib, ... }:
 
-with config.lib.stylix.colors.withHashtag;
+with config.stylix.colors.withHashtag;
 with config.stylix.fonts;
 
 {
   options.stylix.targets.dunst.enable =
-    config.lib.stylix.mkEnableTarget "Dunst" true;
+    config.stylix.mkEnableTarget "Dunst" true;
 
   config = lib.mkIf config.stylix.targets.dunst.enable {
     services.dunst.settings = {

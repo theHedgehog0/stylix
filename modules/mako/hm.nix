@@ -1,10 +1,10 @@
 {pkgs, config, lib, ... }:
 
-with config.lib.stylix.colors.withHashtag;
+with config.stylix.colors.withHashtag;
 with config.stylix.fonts;
 {
   options.stylix.targets.mako.enable =
-    config.lib.stylix.mkEnableTarget "Mako" true;
+    config.stylix.mkEnableTarget "Mako" true;
 
   # Referenced https://github.com/stacyharper/base16-mako
   config = lib.mkIf config.stylix.targets.mako.enable {

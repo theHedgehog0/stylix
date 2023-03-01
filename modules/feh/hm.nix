@@ -2,7 +2,7 @@
 
 {
   options.stylix.targets.feh.enable =
-    config.lib.stylix.mkEnableTarget
+    config.stylix.mkEnableTarget
     "the desktop background using Feh"
     (with config.xsession.windowManager; bspwm.enable 
                                       || herbstluftwm.enable
